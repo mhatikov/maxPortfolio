@@ -1,0 +1,47 @@
+@import "./app/styles/index.scss";
+
+li{
+    list-style: none;
+}
+
+html{
+    min-width: 320px;
+}
+
+body._lock{
+    overflow: hidden;
+}
+
+body {
+    background-color: black
+}
+  
+  [class^="_icon-"]::before, 
+  [class*=" _icon-"]::before {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    margin-right: 5px;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  ._icon-telegram:before {
+    content: "\e900";
+    position: relative;
+    top: 2px;
+  }
+  ._icon-mail:before {
+    content: "\e901";
+    position: relative;
+    top: 2px;
+  }
+  ._icon-phone:before {
+    content: "\e902";
+  }
