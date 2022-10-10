@@ -1,0 +1,26 @@
+$primary: #dbf1f9;
+$secondary: #c6d0f2;
+$accent_light: #cedde3;
+$accent_darkest: #bec6e0;
+
+.primary {
+    color: $primary !important;
+}
+
+.secondary {
+    color: $secondary !important;
+}
+
+.accent_light {
+    color: $accent_light !important;
+}
+
+.accent_darkest {
+    color: $accent_darkest !important;
+}
+
+.border {
+    &--primary {
+        border: 1px solid $primary;
+    }
+}
