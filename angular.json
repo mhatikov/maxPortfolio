@@ -31,7 +31,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css"
             ],
             "scripts": []
           },
@@ -107,5 +109,7 @@
       }
     }
   },
-  "defaultProject": "max-portfolio"
+  "cli": {
+    "analytics": "54b58e3a-9e6a-4f41-b0bc-251c74f297b8"
+  }
 }

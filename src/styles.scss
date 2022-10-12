@@ -11,10 +11,6 @@ html{
 body._lock{
     overflow: hidden;
 }
-
-body {
-    background-color: black
-}
   
   [class^="_icon-"]::before, 
   [class*=" _icon-"]::before {
@@ -45,3 +41,34 @@ body {
   ._icon-phone:before {
     content: "\e902";
   }
+
+.owl-next {
+  color: white !important;
+  margin: 0px !important;
+  height: 50px;
+  width: 70px;
+  font-size: 40px !important;
+  background: rgba(0, 0, 0, 0.342) !important;
+
+  &:hover {
+    color: $accent_darkest !important;
+  }
+}
+
+.owl-prev {
+  color: white !important;
+  margin: 0px !important;
+  height: 50px;
+  width: 70px;
+  font-size: 40px !important;
+  background: rgba(0, 0, 0, 0.342) !important;
+
+  &:hover {
+    color: $accent_darkest !important;
+  }
+}
+
+.owl-nav {
+  display: flex;
+  justify-content: space-between !important;
+}

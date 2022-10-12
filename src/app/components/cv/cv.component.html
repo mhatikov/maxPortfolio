@@ -16,7 +16,7 @@
             <div class="header__title">
                 <div class="header__title-photo">
                     <div class="header__title-photo-wrap">
-                        <img src="images/face.jpg" alt="#">
+                        <img src="./assets/testImages/I9N.png" alt="#">
                     </div>
                 </div>
                 <h1 class="header__title-name">
@@ -77,16 +77,59 @@
             </div>
         </section>
         <section class="cv__hard-skills hard-skills cv-content-wrapper">
-            <h3 class="hard-skills__title cv-title-content">Hard-skills</h3>
+            <h3 class="hard-skills__title cv-title-content">NAZVANIE</h3>
 
-            
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="./assets/testImages/image_2022-10-11_00-01-38.png" alt="img 1">
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="./assets/testImages/image_2022-10-11_00-01-47.png" alt="img 2">
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="https://via.placeholder.com/600/24f355" alt="img 3">
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="https://via.placeholder.com/600/d32776" alt="img 4">
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="https://via.placeholder.com/600/f66b97" alt="img 5">
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="https://via.placeholder.com/600/56a8c2" alt="img 6">
+                  </div>
+                </ng-template>
+            </owl-carousel-o>
+
+        </section>
+        <section class="cv__hard-skills hard-skills cv-content-wrapper">
+            <h3 class="hard-skills__title cv-title-content">NAZVANIE</h3>
+
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="./assets/testImages/artcraft-certif.jpg" alt="img 1">
+                  </div>
+                </ng-template>
+            </owl-carousel-o>
+
         </section>
         <section class="cv__language language cv-content-wrapper">
             <h4 class="language__title cv-title-content">Languages</h4>
             <div class="language__content">
                 <ul class="language__content-wrapper">
                     <li class="language__content-item">Russian - native</li>
-                    <li class="language__content-item">Ukrainian - Intermediate</li>
                     <li class="language__content-item">English - A2+</li>
                 </ul>
             </div>
