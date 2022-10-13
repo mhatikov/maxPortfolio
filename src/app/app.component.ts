@@ -37,8 +37,10 @@ export class AppComponent {
   }
 
   ngAfterViewInit(): void {
-    const wrapContent = this.contentWrap.nativeElement;
-    this.contentPosition = wrapContent.offsetTop;
-    this.cdref.detectChanges();
+    if(this.contentWrap) {
+      const wrapContent = this.contentWrap.nativeElement;
+      this.contentPosition = wrapContent.offsetTop;
+      this.cdref.detectChanges();
+    }
   }
 }

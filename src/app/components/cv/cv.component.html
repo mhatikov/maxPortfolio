@@ -8,120 +8,70 @@
                     </div>
                 </div>
                 <h1 class="header__title-name">
-                    <span class="header__title-container-name">
-                        <span id="name" class="secondary">Maksim</span><span id = "last-name" class="accent_darkest">Filip</span> <br />
-                    </span>
-                    <span class="header__title-container-work">
-                        <span id = "work">AAAAAAAAAAA</span>
-                    </span>
+                    <ng-container *ngIf="nameObj">
+                        <span class="header__title-container-name">
+                            <span id="name" class="secondary">{{nameObj.FirstName}}</span><span id = "last-name" class="accent_darkest">{{nameObj.SecondName}}</span> <br />
+                        </span>
+                        <span class="header__title-container-work">
+                            <span id = "work">{{nameObj.ProfName}}</span>
+                        </span>
+                    </ng-container>
                 </h1>
             </div>
             <ul class="header__contact-info">
-                <li class="header__contact-info-item"><a href="https://t.me/m_hatikov" class="header__contact-info-link primary"><span class="_icon-telegram">m_hatikov</span></a></li>
-                <li class="header__contact-info-item"><a href="mailto:kramskov.mgoo@gmail.com" class="header__contact-info-link primary"><span class="_icon-mail">kramskov.mgoo@gmail.com</span></a></li>
-                <li class="header__contact-info-item"><a href="tel:+7(905)384-28-14" class="header__contact-info-link primary"><span class="_icon-phone">+7(905)384-28-14</span></a></li>
+                <ng-container *ngIf="contactLinks">
+                    <li class="header__contact-info-item"><a [href]="contactLinks.TelegramLink" class="header__contact-info-link primary"><span class="_icon-telegram">{{contactLinks.Telegram}}</span></a></li>
+                    <li class="header__contact-info-item"><a [href]="contactLinks.EmailLink" class="header__contact-info-link primary"><span class="_icon-mail">{{contactLinks.Email}}</span></a></li>
+                </ng-container>
             </ul>
         </header>
         <section class="cv__about-me about-me cv-content-wrapper">
-            <h2 class="about-me__title cv-title-content">About Me</h2>
-            <div class="about-me__content primary">
-                <p>I started being interested in web development at the age of 11, as soon as I got my first computer with Internet access. I have always been interested in working with pages on the Internet. That’s why I started learning html at school. Over time, I came to the conclusion that this is what I want to do professionally.</p>
-                <p>My interest led me to enter the university for a technical specialty, where I mastered C++. Then, I started studying JavaScript and other related technologies for working with web pages in courses.</p>
-                <p>At the moment, I’m graduating from university and I want to start my dream job. I am very hardworking, pedantic and very fond of learning new things. This desire was expressed as a child, when I constantly installed mods in video games and liked to study the structure of applications and “Mod-loaders”.</p>
-            </div>
-        </section>
-        <section class="cv__education education">
-            <div class="education__wrapper cv-content-wrapper">
-                <h3 class="education__title cv-title-content">Education</h3>
-                <div class="education__content">
-                    <div class="education__content-item">
-                        <div class="education__content-item-wrapper">
-                            <div class="education__content-item-year-title-wrap">
-                                <div class="education__content-item-year">2018-2021</div>
-                                <div class="education__content-item-title">University</div>
-                            </div>
-                            <div class="education__content-item-brief">Saratov State University. Faculty of Computer Science and Information Technology. “SSU-CSIT”</div>
-                        </div>
-                    </div>
-                    <div class="education__content-item">
-                        <div class="education__content-item-wrapper">
-                            <div class="education__content-item-year-title-wrap">
-                                <div class="education__content-item-year">2021-...</div>
-                                <div class="education__content-item-title">Courses</div>
-                            </div>
-                            <div class="education__content-item-brief">Programming courses “Foxminded” Front-end Angular. (in progress, <a href="https://foxminded.ua/front-end/">Link</a>).</div>
-                        </div>
-                    </div>
-                    <div class="education__content-item">
-                        <div class="education__content-item-wrapper">
-                        <div class="education__content-item-year-title-wrap">
-                            <div class="education__content-item-year">2021-...</div>
-                            <div class="education__content-item-title">Courses</div>
-                        </div>
-                            <div class="education__content-item-brief">RS Schools Course «JavaScript/Front-end» (in progress)</div>
-                        </div>
-                    </div>
+            <h2 class="about-me__title cv-title-content accent_darkest">About Me</h2>
+            <ng-container *ngIf="paragraphsDescription">
+                <div class="about-me__content primary">
+                    <ng-container *ngFor="let p of paragraphsDescription; let i = index">
+                        <ng-container *ngIf="i > 1"><p>{{p}}</p></ng-container>
+                        <ng-container *ngIf="i <= 1"><p [style.textAlign]="'right'">{{p}}</p></ng-container>
+                    </ng-container>
                 </div>
-            </div>
+            </ng-container>
         </section>
         <section class="cv__hard-skills hard-skills cv-content-wrapper">
-            <h3 class="hard-skills__title cv-title-content">NAZVANIE</h3>
+            <h3 class="hard-skills__title cv-title-content accent_darkest">Works</h3>
 
-            <owl-carousel-o [options]="customOptions">
-                <ng-template carouselSlide>
-                  <div class="slide">
-                    <img src="./assets/testImages/image_2022-10-11_00-01-38.png" alt="img 1">
-                  </div>
-                </ng-template>
-                <ng-template carouselSlide>
-                  <div class="slide">
-                    <img src="./assets/testImages/image_2022-10-11_00-01-47.png" alt="img 2">
-                  </div>
-                </ng-template>
-                <ng-template carouselSlide>
-                  <div class="slide">
-                    <img src="https://via.placeholder.com/600/24f355" alt="img 3">
-                  </div>
-                </ng-template>
-                <ng-template carouselSlide>
-                  <div class="slide">
-                    <img src="https://via.placeholder.com/600/d32776" alt="img 4">
-                  </div>
-                </ng-template>
-                <ng-template carouselSlide>
-                  <div class="slide">
-                    <img src="https://via.placeholder.com/600/f66b97" alt="img 5">
-                  </div>
-                </ng-template>
-                <ng-template carouselSlide>
-                  <div class="slide">
-                    <img src="https://via.placeholder.com/600/56a8c2" alt="img 6">
-                  </div>
-                </ng-template>
-            </owl-carousel-o>
+            <ng-container *ngIf="filesPortfolio.length > 0">
+                <swiper
+                [spaceBetween]="30"
+                [navigation]="true"
+                [autoHeight]="true"
+                class="mySwiper">
+                    <ng-template swiperSlide *ngFor="let path of filesPortfolio"><img [src]="path" alt="img 1"></ng-template>
+                </swiper>
+            </ng-container>
 
         </section>
         <section class="cv__hard-skills hard-skills cv-content-wrapper">
-            <h3 class="hard-skills__title cv-title-content">NAZVANIE</h3>
+            <h3 class="hard-skills__title cv-title-content accent_darkest">Certificates</h3>
 
-            <owl-carousel-o [options]="customOptions">
-                <ng-template carouselSlide>
-                  <div class="slide">
-                    <img src="./assets/testImages/artcraft-certif.jpg" alt="img 1">
-                  </div>
-                </ng-template>
-            </owl-carousel-o>
-
+            <ng-container *ngIf="sertificatesUrl.length > 0">
+                <swiper
+                [spaceBetween]="30"
+                [navigation]="true"
+                [autoHeight]="true"
+                class="mySwiper">
+                    <ng-template swiperSlide *ngFor="let sert of sertificatesUrl"><img [src]="sert" alt="img 1"></ng-template>
+                </swiper>
+            </ng-container>
         </section>
-        <section class="cv__language language cv-content-wrapper">
-            <h4 class="language__title cv-title-content">Languages</h4>
+        <!-- <section class="cv__language language cv-content-wrapper">
+            <h4 class="language__title cv-title-content accent_darkest">Languages</h4>
             <div class="language__content">
                 <ul class="language__content-wrapper">
                     <li class="language__content-item">Russian - native</li>
                     <li class="language__content-item">English - A2+</li>
                 </ul>
             </div>
-        </section>
+        </section> -->
         <footer class="cv__footer footer cv-content-wrapper">
             <div class="footer__content">
                 <div class="footer__content-item">
@@ -205,10 +155,10 @@
                 <div class="footer__content-item">
                     <div class="footer__content-item-icon-wrapper" id="gitlab">
                         <a href="https://git.foxminded.com.ua/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#FC6D26" d="M109.757 49.765l-5.14-15.82L94.43 2.596c-.523-1.614-2.805-1.614-3.33 0l-10.187 31.35H47.087L36.9 2.596c-.524-1.614-2.806-1.614-3.33 0l-10.187 31.35-5.14 15.82a3.502 3.502 0 0 0 1.272 3.915L64 86l44.485-32.32a3.502 3.502 0 0 0 1.272-3.915"/><path fill="#E24329" d="M64 86l16.913-52.054H47.087L64 86z"/><path fill="#FC6D26" d="M64 86L47.087 33.946H23.383L64 86z"/><path fill="#FCA326" d="M23.383 33.946l-5.14 15.82a3.502 3.502 0 0 0 1.272 3.914L64 86 23.383 33.946z"/><path fill="#E24329" d="M23.383 33.946h23.704L36.9 2.594c-.524-1.613-2.806-1.613-3.33 0L23.383 33.946z"/><path fill="#FC6D26" d="M64 86l16.913-52.054h23.704L64 86z"/><path fill="#FCA326" d="M104.617 33.946l5.14 15.82a3.502 3.502 0 0 1-1.272 3.914L64 86l40.617-52.054z"/><path fill="#E24329" d="M104.617 33.946H80.913L91.1 2.594c.524-1.613 2.806-1.613 3.33 0l10.187 31.352z"/><path fill="#5C5C5C" d="M65.387 93.983h-4.49l.015 33.405h18.16v-4.13H65.4l-.015-29.275zM96.363 121.523a7.648 7.648 0 0 1-5.56 2.346c-3.418 0-4.795-1.684-4.795-3.877 0-3.315 2.295-4.896 7.192-4.896.918 0 2.397.102 3.162.255v6.17zm-4.642-20.247c-3.624 0-6.95 1.285-9.543 3.423l1.587 2.747c1.836-1.07 4.08-2.142 7.294-2.142 3.673 0 5.305 1.887 5.305 5.05v1.63c-.714-.152-2.193-.254-3.11-.254-7.857 0-11.835 2.755-11.835 8.518 0 5.15 3.162 7.752 7.957 7.752 3.23 0 6.325-1.48 7.396-3.876l.817 3.264h3.163v-17.085c0-5.406-2.347-9.027-9.03-9.027zM115.234 124.022c-1.683 0-3.163-.204-4.285-.714v-15.452c1.53-1.275 3.417-2.193 5.814-2.193 4.336 0 6.02 3.06 6.02 8.007 0 7.037-2.704 10.352-7.55 10.352m1.886-22.746c-4.012 0-6.17 2.73-6.17 2.73v-4.31l-.015-5.713h-4.386l.014 32.59c2.193.917 5.203 1.427 8.467 1.427 8.364 0 12.394-5.355 12.394-14.586 0-7.293-3.723-12.138-10.304-12.138M16.592 97.604c3.98 0 6.53 1.326 8.212 2.652l1.93-3.34c-2.63-2.306-6.167-3.545-9.94-3.545-9.538 0-16.22 5.815-16.22 17.545C.574 123.205 7.784 128 16.03 128c4.132 0 7.652-.97 9.947-1.938l-.094-13.132v-4.13H13.64v4.13h7.805l.094 9.97c-1.02.51-2.806.918-5.204.918-6.63 0-11.07-4.17-11.07-12.954.002-8.925 4.593-13.26 11.326-13.26M48.16 93.983h-4.387l.014 5.61v19.379c0 5.407 2.347 9.028 9.03 9.028.922 0 1.825-.084 2.702-.243v-3.94a13.47 13.47 0 0 1-2.04.154c-3.674 0-5.306-1.886-5.306-5.048V105.56h7.345v-3.672h-7.346l-.014-7.905zM32.642 127.388h4.387v-25.5H32.64v25.5zM32.642 98.37h4.387v-4.387H32.64v4.386z"/></svg></a>
-                      </div>
-                      <div class="footer__content-item-info">
+                    </div>
+                    <div class="footer__content-item-info">
                           <a href="https://git.foxminded.com.ua/"><span>My GitLab</span></a>
-                      </div>
+                    </div>
                 </div>
             </div>
         </footer>

@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ParallaxService {
 
-  FORCLOUDS:number = 30;
-  FORMOUNTAINS:number = 50;
+  FORCLOUDS:number = 60;
+  FORMOUNTAINS:number = 30;
   FORHUMAN:number = 10;
 
   SPEED:number = 0.05;

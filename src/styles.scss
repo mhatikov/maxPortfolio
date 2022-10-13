@@ -1,4 +1,7 @@
 @import "./app/styles/index.scss";
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
 
 li{
     list-style: none;
@@ -6,6 +9,7 @@ li{
 
 html{
     min-width: 320px;
+    background: black;
 }
 
 body._lock{
@@ -71,4 +75,35 @@ body._lock{
 .owl-nav {
   display: flex;
   justify-content: space-between !important;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: black;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.swiper-slide img {
+  display: block;
+  height: auto;
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+
+  
 }
