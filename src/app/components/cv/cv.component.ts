@@ -35,9 +35,6 @@ export class CvComponent implements OnInit {
   constructor(private store: FireStoreService) { }
 
   ngOnInit(): void {
-    this.getDescription();
-    this.getContactLinks();
-    this.getNames();
     this.getImagesPortfolioPaths();
     this.getCertificatesPortfolioPaths();
   }
@@ -55,55 +52,13 @@ export class CvComponent implements OnInit {
     autoHeight:true,
   }
 
-  getDescription(): void {
-    this.store.getDescription$().pipe(takeUntil(this.unsubscribe$))
-      .subscribe(res => this.paragraphsDescription = res['paragraphs']);
-  }
-
-  getContactLinks(): void {
-    this.store.getContactLinks$().pipe(takeUntil(this.unsubscribe$))
-      .subscribe(res => {
-        this.contactLinks.Email = res['Email'];
-        this.contactLinks.Telegram = res['Telegram'];
-
-        this.contactLinks.TelegramLink = `https://t.me/${res['Telegram']}`;
-        this.contactLinks.EmailLink = `mailto:${res['Email']}`;
-      });
-  }
-
-  getNames(): void {
-    this.store.getName$().pipe(takeUntil(this.unsubscribe$))
-      .subscribe(res => {
-        this.nameObj = {};
-        this.nameObj['FirstName'] = res['FirstName'];
-        this.nameObj['SecondName'] = res['SecondName'];
-        this.nameObj['ProfName'] = res['ProfName'];
-      })
-  }
-
   getImagesPortfolioPaths(): void {
-    this.store.getImagesRefs$('portfolio-arts/').pipe(takeUntil(this.unsubscribe$))
-    .subscribe(res => {
-      res.items.forEach((elem) => {
-        this.getImage$(elem.fullPath).subscribe(res => {
-          this.filesPortfolio.push(res);
-        })
-      })
-    });
+    this.filesPortfolio = ['./assets/testImages/image_2022-10-11_00-01-38.png', './assets/testImages/image_2022-10-11_00-01-47.png'];
   }
 
   getCertificatesPortfolioPaths(): void {
-    this.store.getImagesRefs$('certificates/').pipe(takeUntil(this.unsubscribe$))
-    .subscribe(res => {
-      res.items.forEach((elem) => {
-        this.getImage$(elem.fullPath).subscribe(res => {
-          this.sertificatesUrl.push(res);
-        })
-      })
-    });
+    this.sertificatesUrl = ['./assets/testImages/artcraft-certif.jpg'];
   }
 
-  getImage$(path: string) {
-    return this.store.uploadImageProductByPath$(path).pipe(takeUntil(this.unsubscribe$));
-  }
+
 }

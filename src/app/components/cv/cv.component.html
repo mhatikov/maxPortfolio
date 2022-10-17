@@ -8,33 +8,37 @@
                     </div>
                 </div>
                 <h1 class="header__title-name">
-                    <ng-container *ngIf="nameObj">
                         <span class="header__title-container-name">
-                            <span id="name" class="secondary">{{nameObj.FirstName}}</span><span id = "last-name" class="accent_darkest">{{nameObj.SecondName}}</span> <br />
+                            <span id="name" class="secondary">Maxim</span><span id = "last-name" class="accent_darkest">Filip</span> <br />
                         </span>
                         <span class="header__title-container-work">
-                            <span id = "work">{{nameObj.ProfName}}</span>
+                            <span id = "work">Artist</span>
                         </span>
-                    </ng-container>
                 </h1>
             </div>
             <ul class="header__contact-info">
-                <ng-container *ngIf="contactLinks">
-                    <li class="header__contact-info-item"><a [href]="contactLinks.TelegramLink" class="header__contact-info-link primary"><span class="_icon-telegram">{{contactLinks.Telegram}}</span></a></li>
-                    <li class="header__contact-info-item"><a [href]="contactLinks.EmailLink" class="header__contact-info-link primary"><span class="_icon-mail">{{contactLinks.Email}}</span></a></li>
-                </ng-container>
-            </ul>
+                    <li class="header__contact-info-item"><a href="https://t.me/i9nore" class="header__contact-info-link primary"><span class="_icon-telegram">i9nore</span></a></li>
+                    <li class="header__contact-info-item"><a href="mailto:i9nore@mfilip.ru" class="header__contact-info-link primary"><span class="_icon-mail">i9nore@mfilip.ru</span></a></li>
+                    <li class="header__contact-info-item icon-a">
+                        <div class="icon-wrap-aa">
+                            <div class="icon-wrap-2">
+                                <svg width="24px" class="col-icon" height="24px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><title>ArtStation icon</title><path d="M0 17.723l2.027 3.505h.001a2.424 2.424 0 0 0 2.164 1.333h13.457l-2.792-4.838H0zm24 .025c0-.484-.143-.935-.388-1.314L15.728 2.728a2.424 2.424 0 0 0-2.142-1.289H9.419L21.598 22.54l1.92-3.325c.378-.637.482-.919.482-1.467zm-11.129-3.462L7.428 4.858l-5.444 9.428h10.887z"/></svg>
+                            </div>
+                            <a href="https://www.artstation.com/i9nore/profile" class="header__contact-info-link primary"><span>i9nore</span></a>
+                        </div>
+                    </li>
+                </ul>
         </header>
         <section class="cv__about-me about-me cv-content-wrapper">
             <h2 class="about-me__title cv-title-content accent_darkest">About Me</h2>
-            <ng-container *ngIf="paragraphsDescription">
                 <div class="about-me__content primary">
-                    <ng-container *ngFor="let p of paragraphsDescription; let i = index">
-                        <ng-container *ngIf="i > 1"><p>{{p}}</p></ng-container>
-                        <ng-container *ngIf="i <= 1"><p [style.textAlign]="'right'">{{p}}</p></ng-container>
-                    </ng-container>
+                    <p class="right">“ – Animators are brilliant actors, too! They can act out all kinds of roles! Not just humans, but wind, nature and machines too! It can reach greater expressive heights than live actors ever could!”</p>
+                    <p class="right">"- Eizouken ni wa Te wo Dasu na!. "</p>
+                    <p>I’m Max (21). I have a bachelor’s degree in IT and, in 2021, I have successfully finished the “Digital Art” course in ArtCraft school.</p>
+                    <p>I started drawing when I was 13.  While studying at art school I was trying different styles to understand my purpose in this sphere. Only by the age of 17 I realized that digital art is my craft, so I began to improve my skills.</p>
+                    <p>
+                        "Animation is my main source of wisdom and inspiration. It’s important to always have a goal and never stop trying to reach it no matter what! I want to animate! "</p>
                 </div>
-            </ng-container>
         </section>
         <section class="cv__hard-skills hard-skills cv-content-wrapper">
             <h3 class="hard-skills__title cv-title-content accent_darkest">Works</h3>
@@ -52,27 +56,19 @@
         </section>
         <section class="cv__hard-skills hard-skills cv-content-wrapper">
             <h3 class="hard-skills__title cv-title-content accent_darkest">Certificates</h3>
-
-            <ng-container *ngIf="sertificatesUrl.length > 0">
-                <swiper
-                [spaceBetween]="30"
-                [navigation]="true"
-                [autoHeight]="true"
-                class="mySwiper">
-                    <ng-template swiperSlide *ngFor="let sert of sertificatesUrl"><img [src]="sert" alt="img 1"></ng-template>
-                </swiper>
-            </ng-container>
-        </section>
-        <!-- <section class="cv__language language cv-content-wrapper">
-            <h4 class="language__title cv-title-content accent_darkest">Languages</h4>
-            <div class="language__content">
-                <ul class="language__content-wrapper">
-                    <li class="language__content-item">Russian - native</li>
-                    <li class="language__content-item">English - A2+</li>
-                </ul>
+            <div class="cert-slider">
+                <ng-container *ngIf="sertificatesUrl.length > 0">
+                    <swiper
+                    [spaceBetween]="30"
+                    [navigation]="true"
+                    [autoHeight]="true"
+                    class="mySwiper">
+                        <ng-template swiperSlide *ngFor="let sert of sertificatesUrl"><img [src]="sert" alt="img 1"></ng-template>
+                    </swiper>
+                </ng-container>
             </div>
-        </section> -->
-        <footer class="cv__footer footer cv-content-wrapper">
+        </section>
+        <!-- <footer class="cv__footer footer cv-content-wrapper">
             <div class="footer__content">
                 <div class="footer__content-item">
                     <div class="footer__content-item-icon-wrapper">
@@ -161,6 +157,6 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> -->
     </div>
 </main>
