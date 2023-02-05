@@ -21,6 +21,22 @@
 }
 
 @font-face {
+    font-family: 'Jost';
+    src: local('Jost'),
+        url(./assets/fonts/Jost-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: local('Jost'),
+        url(./assets/fonts/Jost-Medium.ttf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Poppins';
     src: url(./assets/fonts/Poppins-Light.ttf);
 }
@@ -647,28 +663,27 @@ body._lock{
   }
 }
 
-#gitlab{
-  width: 50px;
-}
 #name{
   font-size: 48px;
   margin-right: 15px;
-  font-family: 'PlayfairDisplay';
-  font-weight: 100;
+  font-family: 'Jost';
+  font-weight: 500;
   color: #ff8d8d;
   @media (max-width:800px){
       font-size: 34px;
   }
 }
+
 #last-name{
   font-size: 48px;
-  font-family: 'PlayfairDisplay';
-  font-weight: bold;
+  font-family: 'Jost';
+  font-weight: 500;
   color: #ff8d8d;
   @media (max-width:800px){
       font-size: 34px;
   }
 }
+
 #work{
   display: block;
   margin-top: 25px;
@@ -705,10 +720,10 @@ body._lock{
   }
 }
 .cv-title-content{
-  font-family: 'PlayfairDisplay';
+  font-family: 'Jost';
   margin: 10px 0px 15px 0px;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .swiper {
@@ -737,7 +752,7 @@ body._lock{
     &__logo {
         max-width: 320px;
         background: url('./assets/parallax/i9nlogo2.svg');
-        background-size: 120% 120%;
+        background-size: 100% 150%;
         background-position: 0 80%;
         width: 100%;
         height: 300px;
